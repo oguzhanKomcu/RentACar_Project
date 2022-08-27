@@ -1,8 +1,12 @@
-﻿namespace Core.CrossCuttingConcerns.Exceptions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class AuthorizationException : Exception
+namespace Core.CrossCuttingConcers.Exceptions
 {
-    public AuthorizationException(string message) : base(message)
+    internal class AuthorizationException
     {
     }
 }

@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿
+using Core.CrossCuttingConcers.Exceptions;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -30,7 +32,7 @@ public class ExceptionMiddleware
     {
         context.Response.ContentType = "application/json";
 
-        if (exception.GetType() == typeof(ValidationException)) return CreateValidationException(context, exception);
+        if (exception.GetType() == typeof(FluentValidation.ValidationException)) return CreateValidationException(context, exception);
         if (exception.GetType() == typeof(BusinessException)) return CreateBusinessException(context, exception);
         if (exception.GetType() == typeof(AuthorizationException))
             return CreateAuthorizationException(context, exception);

@@ -1,5 +1,5 @@
 ﻿namespace Core.Persistence.Paging;
-
+//IPaginate sayfalama konusunda bize yardımcı olacak alanalrımızı bulunduruyor. 
 public class Paginate<T> : IPaginate<T>
 {
     internal Paginate(IEnumerable<T> source, int index, int size, int from)

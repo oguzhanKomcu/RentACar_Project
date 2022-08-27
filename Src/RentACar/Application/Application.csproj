@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Folder Include="Features\BrandFeature\Constans\" />
+    <Folder Include="Features\BrandFeature\Models\" />
+    <Folder Include="Features\BrandFeature\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CorePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj" />
     <ProjectReference Include="..\..\CorePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>

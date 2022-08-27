@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "Src\RentACar\WebA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CorePackages", "CorePackages", "{2918EA00-F8B1-4EB9-A3CB-9C1331394B49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "Src\CorePackages\Core.Persistence\Core.Persistence.csproj", "{98A7750E-CE88-4859-BD3D-E24F953B0846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "Src\CorePackages\Core.Persistence\Core.Persistence.csproj", "{98A7750E-CE88-4859-BD3D-E24F953B0846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.CrossCuttingConcers", "Src\CorePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj", "{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{98A7750E-CE88-4859-BD3D-E24F953B0846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A7750E-CE88-4859-BD3D-E24F953B0846}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A7750E-CE88-4859-BD3D-E24F953B0846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{EB855C5C-501C-473A-9FB1-30425A8B4F3C} = {53799D1B-503E-4F6E-98EF-FF5EF0FD8AA4}
 		{2918EA00-F8B1-4EB9-A3CB-9C1331394B49} = {EF379205-A855-4C54-8101-47A48E8F4E03}
 		{98A7750E-CE88-4859-BD3D-E24F953B0846} = {2918EA00-F8B1-4EB9-A3CB-9C1331394B49}
+		{9A5FF6F9-9A73-43AD-B875-3FE1D0CCF3E3} = {2918EA00-F8B1-4EB9-A3CB-9C1331394B49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28492BA6-8AE3-49A3-8BA6-15EC91305A47}

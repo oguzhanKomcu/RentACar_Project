@@ -1,5 +1,5 @@
 ﻿namespace Core.Persistence.Paging;
-
+//IPaginate sayfalama konusunda bize yardımcı olacak alanalrımızı bulunduruyor. 
 public interface IPaginate<T>
 {
     int From { get; }
