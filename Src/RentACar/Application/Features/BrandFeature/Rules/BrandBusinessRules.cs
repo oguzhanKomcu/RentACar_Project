@@ -28,5 +28,18 @@ namespace Application.Features.BrandFeature.Rules
             //eğer böyle bir marka varsa ife giricek ve exception fırlatıcak.KURALDAN GEÇMEDİĞİ HER DURUMDA HATA FIRLATIYOR.
             if (result.Items.Any()) throw new BusinessException("Some Featre Entty name exists.");
         }
+
+
+        public async Task BrandShouldExistWhenRequested(int id)      
+        {
+            var brand = await _brandRepository.GetListAsync(b => b.Id == id);
+
+            if (brand == null) throw new BusinessException("Requested brand does not exist");
+        }
+
+        internal void BrandShouldExistWhenRequested(Brand? brand)
+        {
+            if (brand == null) throw new BusinessException("Requested brand does not exist");
+        }
     }
 }

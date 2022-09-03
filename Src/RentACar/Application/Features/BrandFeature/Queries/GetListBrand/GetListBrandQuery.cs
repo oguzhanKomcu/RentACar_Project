@@ -25,6 +25,7 @@ namespace Application.Features.BrandFeature.Queries.GetListBrand
 
             private readonly IBrandRepository _brandRepository;
             private readonly IMapper _mapper;
+            
 
             public GetListBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper)
             {
