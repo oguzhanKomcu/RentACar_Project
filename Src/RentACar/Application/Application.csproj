@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Features\BrandFeature\Constans\" />
-    <Folder Include="Features\BrandFeature\Models\" />
-    <Folder Include="Features\BrandFeature\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CorePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj" />
+    <ProjectReference Include="..\..\CorePackages\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\..\CorePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\..\CorePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
     <ProjectReference Include="..\..\CorePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>

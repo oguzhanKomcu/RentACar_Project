@@ -1,4 +1,7 @@
 ﻿using Application.Features.BrandFeature.Commands.CreaateBrand;
+using Application.Features.BrandFeature.Models;
+using Application.Features.BrandFeature.Queries.GetListBrand;
+using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Controllers;
@@ -11,7 +14,7 @@ namespace WebApi.Controllers
     {
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)
+        public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand) //POST OPERASYONLARINDA BODYDEN OKUDUYGUMUZ İÇİN FROMBODY
         {
 
 
@@ -21,6 +24,20 @@ namespace WebApi.Controllers
 
             return Created("", result);//kullanıcıya geri dönüşolarak istersek tırank içine api adresinide verebiliriz.
                                        //Result olarakta dto yani response için verilen bilgiler döner.
+
+
+
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest) // GET OPERASYONLARINDA QUERYDEN OKUDUGUMUZ İÇİN FROMQUERY
+        {
+            //İlk önce pagerequest olarak aldık sonrasında gelen sonucu getlistbrandqueye döndürdük..
+
+            GetListBrandQuery getListBrandQuery = new() { PageRequest= pageRequest};
+            BrandListModel result = await Mediator.Send(getListBrandQuery);
+            return Ok(result);
         }
 
     }

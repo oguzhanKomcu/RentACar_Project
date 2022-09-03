@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.CrossCuttingConcers.Exceptions
+namespace Core.Application.Pipelines.Logging
 {
-    internal class AuthorizationException
+    public interface ILoggableRequest
     {
     }
 }
