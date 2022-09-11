@@ -30,7 +30,7 @@ namespace Application.Features.BrandFeature.Rules
         }
 
 
-        public async Task BrandShouldExistWhenRequested(int id)      
+        public async Task BrandShouldExistWhenRequested(int id)
         {
             var brand = await _brandRepository.GetListAsync(b => b.Id == id);
 

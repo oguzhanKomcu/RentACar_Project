@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Persistence
 {
     //DI için konteynerlarımızı kendi katmanları üzerinde oluşturuyoruz. Bu sınıfları daha sonra program.cs de çağırıyoruz.
-    public static class PersistenceServiceRegistration
+    public static class PersistenceServiceRegistration 
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {

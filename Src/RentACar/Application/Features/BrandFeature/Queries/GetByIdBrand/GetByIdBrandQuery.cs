@@ -3,6 +3,7 @@ using Application.Features.BrandFeature.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entites;
+
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,13 @@ namespace Application.Features.BrandFeature.Queries.GetByIdBrand
         {
             private readonly IBrandRepository _brandRepository;
             private readonly IMapper _mapper;
-            private readonly BrandBusinessRules _brandBusinessRules;
+           private readonly BrandBusinessRules _brandBusinessRules;
 
             public GetByIdBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
             {
                 _brandRepository = brandRepository;
                 _mapper = mapper;
-                _brandBusinessRules = brandBusinessRules;
+               _brandBusinessRules = brandBusinessRules;
             }
 
             public async Task<BrandGetByIdDto> Handle(GetByIdBrandQuery request, CancellationToken cancellationToken)

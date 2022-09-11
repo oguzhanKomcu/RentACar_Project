@@ -1,6 +1,6 @@
 ﻿using Application.Features.BrandFeature.Commands.CreaateBrand;
 using Application.Features.BrandFeature.Models;
-using Application.Features.BrandFeature.Queries.GetByIdBrand;
+
 using Application.Features.BrandFeature.Queries.GetListBrand;
 using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
@@ -42,14 +42,14 @@ namespace WebApi.Controllers
         }
 
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdBrandQuery) // direk url üzerinden okuma yapılacağı için fromroute
-        {
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetById([FromRoute] GetByIdBrandQuery getByIdBrandQuery) // direk url üzerinden okuma yapılacağı için fromroute
+        //{
 
 
-            var brand = await Mediator.Send(getByIdBrandQuery);
-            return Ok(brand);
-        }
+        //    var brand = await Mediator.Send(getByIdBrandQuery);
+        //    return Ok(brand);
+        //}
 
     }
 }
