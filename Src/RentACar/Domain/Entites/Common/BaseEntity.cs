@@ -14,5 +14,13 @@ namespace Domain.Entites.Common
         public  DateTime? UpdateDate { get; set; }
          public DateTime? DeleteDate { get; set; }
         public Status Status { get; set; }
+        public BaseEntity()
+        {
+        }
+
+        public BaseEntity(int id) : this()
+        {
+            Id = id;
+        }
     }
 }

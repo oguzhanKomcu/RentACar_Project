@@ -1,4 +1,5 @@
-﻿using Domain.Entites;
+﻿using Core.Security.Entities;
+using Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -15,6 +16,10 @@ namespace Persistence.Contexts
 
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Model> Models { get; set; }
+        public DbSet<User> users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
 
         public BaseDbContext(DbContextOptions<BaseDbContext> dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
@@ -23,6 +28,12 @@ namespace Persistence.Contexts
 
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //if (!optionsBuilder.IsConfigured)
+            //    base.OnConfiguring(
+            //        optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SomeConnectionString")));
+        }
 
         //Veritabanında modelim yaratılırken olucak kurallar
         protected override void OnModelCreating(ModelBuilder modelBuilder)

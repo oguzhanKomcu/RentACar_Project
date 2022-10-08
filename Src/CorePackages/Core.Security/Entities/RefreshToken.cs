@@ -1,8 +1,11 @@
 ﻿using Core.Persistence.Repositories;
+using Domain.Entites.Common;
 
 namespace Core.Security.Entities;
 
-public class RefreshToken : Entity
+
+//Refresh token , kullanıcının token süresi bittiğinde tekar tekrar girmesini engellemek için talep ettiğimiz token için kurduğumuz bir yapı
+public class RefreshToken : BaseEntity
 {
     public int UserId { get; set; }
     public string Token { get; set; }

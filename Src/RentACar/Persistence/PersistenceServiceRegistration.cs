@@ -13,16 +13,22 @@ using System.Threading.Tasks;
 namespace Persistence
 {
     //DI için konteynerlarımızı kendi katmanları üzerinde oluşturuyoruz. Bu sınıfları daha sonra program.cs de çağırıyoruz.
-    public static class PersistenceServiceRegistration 
+    public static class PersistenceServiceRegistration
     {
-        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
+                                                                IConfiguration configuration)
         {
-            services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("RentACarConnectionString")));
+            services.AddDbContext<BaseDbContext>(options =>
+                                                     options.UseSqlServer(
+                                                         configuration.GetConnectionString("RentACarConnectionString")));
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IModelRepository, ModelRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
-            services.AddScoped<IBrandRepository, BrandRepository>(); //IBrandRepository istendiğinde BrandRepository verileceğini burada belirttik.
             return services;
         }
-
-
     }
 }
