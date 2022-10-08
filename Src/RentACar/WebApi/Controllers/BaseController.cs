@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace WebAPI.Controllers
 {
@@ -12,5 +13,11 @@ namespace WebAPI.Controllers
         private IMediator? _mediator;
 
 
+        //bU fonksiyonu sadece kalıtım alan yerlerde kullanmak istediğimiz için protected yaptık.
+        protected  string? GetIpAddress()
+        {
+            if (Request.Headers.ContainsKey("X-Forwarded-For")) return Request.Headers["X-Forwarded-For"];
+            return HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString();
+        }
     }
 }
