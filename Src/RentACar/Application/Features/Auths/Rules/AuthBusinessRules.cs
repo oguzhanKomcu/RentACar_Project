@@ -15,7 +15,7 @@ namespace Application.Features.Auths.Rules
         private readonly IUserRepository _userRepository;
         public AuthBusinessRules(IUserRepository userRepository)
         {
-                
+            _userRepository = userRepository;
         }
 
         public async Task EmailCanNotBeDuplicatedWhenRegistered(string email)
